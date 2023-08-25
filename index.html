@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Fotos con Ventana Emergente</title>
+<style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .photo {
+    margin: 10px;
+    cursor: pointer;
+  }
+  .photo img {
+    max-width: 200px;
+    max-height: 150px;
+    transition: transform 0.2s;
+  }
+  .photo img:hover {
+    transform: scale(1.1);
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    text-align: center;
+    cursor: pointer;
+  }
+  .modal-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="gallery">
+    <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon6.jpg')">
+        <img src="Miyeon6.jpg" alt="Foto 1">
+    </div>
+    <div class="photo" onclick="openModal('Foto 2', 'Descripción de la Foto 2', 'Miyeon8.jpg')">
+        <img src="Miyeon8.jpg" alt="Foto 2">
+    </div>
+    <div class="photo" onclick="openModal('Foto 3', 'Descripción de la Foto 3', 'Miyeon10.jpg')">
+        <img src="Miyeon10.jpg" alt="Foto 3">
+    </div>
+    <div class="photo" onclick="openModal('Foto 9', 'Descripción de la Foto 9', 'Miyeon9.jpg')">
+        <img src="Miyeon9.jpg" alt="Foto 9"> </div>
+        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon6.jpg')">
+            <img src="Miyeon6.jpg" alt="Foto 1">
+        </div>
+        <div class="photo" onclick="openModal('Foto 2', 'Descripción de la Foto 2', 'Miyeon8.jpg')">
+            <img src="Miyeon8.jpg" alt="Foto 2">
+        </div>
+        <div class="photo" onclick="openModal('Foto 3', 'Descripción de la Foto 3', 'Miyeon10.jpg')">
+            <img src="Miyeon10.jpg" alt="Foto 3">
+        </div>
+        <div class="photo" onclick="openModal('Foto 9', 'Descripción de la Foto 9', 'Miyeon9.jpg')">
+            <img src="Miyeon9.jpg" alt="Foto 9"> </div>
+            <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon6.jpg')">
+                <img src="Miyeon6.jpg" alt="Foto 1">
+            </div>
+            <div class="photo" onclick="openModal('Foto 2', 'Descripción de la Foto 2', 'Miyeon8.jpg')">
+                <img src="Miyeon8.jpg" alt="Foto 2">
+            </div>
+            <div class="photo" onclick="openModal('Foto 3', 'Descripción de la Foto 3', 'Miyeon10.jpg')">
+                <img src="Miyeon10.jpg" alt="Foto 3">
+            </div>
+            <div class="photo" onclick="openModal('Foto 9', 'Descripción de la Foto 9', 'Miyeon9.jpg')">
+                <img src="Miyeon9.jpg" alt="Foto 9"> </div>
+                <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon6.jpg')">
+                    <img src="Miyeon6.jpg" alt="Foto 1">
+                </div>
+                <div class="photo" onclick="openModal('Foto 2', 'Descripción de la Foto 2', 'Miyeon8.jpg')">
+                    <img src="Miyeon8.jpg" alt="Foto 2">
+                </div>
+                <div class="photo" onclick="openModal('Foto 3', 'Descripción de la Foto 3', 'Miyeon10.jpg')">
+                    <img src="Miyeon10.jpg" alt="Foto 3">
+                </div>
+                <div class="photo" onclick="openModal('Foto 9', 'Descripción de la Foto 9', 'Miyeon9.jpg')">
+                    <img src="Miyeon9.jpg" alt="Foto 9"> </div>
+  <!-- Agrega más elementos .photo para más fotos -->
+</div>
+<div class="modal" id="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation();">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title">Título de la Foto</h2>
+    <p id="modal-description">Descripción de la foto.</p>
+    <img id="modal-image" class="modal-image" src="" alt="">
+  </div>
+</div>
+<script>
+function openModal(title, description, imageUrl) {
+  var modal = document.getElementById("modal");
+  var modalTitle = document.getElementById("modal-title");
+  var modalDescription = document.getElementById("modal-description");
+  var modalImage = document.getElementById("modal-image");
+
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
+  modalImage.src = imageUrl;
+
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  var modal = document.getElementById("modal");
+  modal.style.display = "none";
+}
+</script>
+</body>
+</html>
