@@ -4,73 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css">
-    <title>Galería de Fotos con Ventana Emergente</title>
-    
+    <link rel="stylesheet" href="style.css">
+    <title>Buen Inicio de Ciclo</title>
 </head>
 
 <body>
-    <div class="gallery">
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon1.jpg')">
-            <img src="Miyeon1.jpg" alt="Foto 1">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon2.jpg')">
-            <img src="Miyeon2.jpg" alt="Foto 2">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon3.jpg')">
-            <img src="Miyeon3.jpg" alt="Foto 3">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon4.jpg')">
-            <img src="Miyeon4.jpg" alt="Foto 4">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon5.jpg')">
-            <img src="Miyeon5.jpg" alt="Foto 5">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon6.jpg')">
-            <img src="Miyeon6.jpg" alt="Foto 6">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon7.jpg')">
-            <img src="Miyeon7.jpg" alt="Foto 7">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon8.jpg')">
-            <img src="Miyeon8.jpg" alt="Foto 8">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon9.jpg')">
-            <img src="Miyeon9.jpg" alt="Foto 9">
-        </div>
-        <div class="photo" onclick="openModal('Foto', 'Descripción de la Foto 1', 'Miyeon10.jpg')">
-            <img src="Miyeon10.jpg" alt="Foto 10">
-        </div>
-        
-        <!-- Agrega más elementos .photo para más fotos -->
-    </div>
-    <div class="modal" id="modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation();">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modal-title">Título de la Foto</h2>
-            <p id="modal-description">Descripción de la foto.</p>
-            <img id="modal-image" class="modal-image" src="" alt="">
+    <div class="windows" id="win">
+        <p>En tus ojos resplandece luz sin final, <br>
+            Mis lágrimas de alegria comienzan a brotar, <br>
+            Cada realidad se tiñe de felicidad, <br>
+            Eres mi razón, mi eterna claridad.</p>
+        <div id="cerrar">
+            <button type="button" class="color-button-close" id="win" onclick="cerrar();"> Cerrar </button>
         </div>
     </div>
-    <script>
-        function openModal(title, description, imageUrl) {
-            var modal = document.getElementById("modal");
-            var modalTitle = document.getElementById("modal-title");
-            var modalDescription = document.getElementById("modal-description");
-            var modalImage = document.getElementById("modal-image");
 
-            modalTitle.textContent = title;
-            modalDescription.textContent = description;
-            modalImage.src = imageUrl;
+    <div class="container">
+        <h1>Buen Inicio de Ciclo</h1>
+        <p>Da todo de ti para tener un buen ciclo, ten paciencia y confianza en lo que realices. Ya se viene el
+            buen estrés, presión y tareas 😼.</p>
+        <p>Te quiere bonito,<br>Renzo</p>
+        <button type="button" class="color-button" id="win" onclick="abrir();"> Abrir </button>
+    </div>
 
-            modal.style.display = "flex";
-        }
+    <div class="container">
+        <div>
+            <img class="image" src="Imagen1.jpeg" alt="Imagen 1">
+            <img class="image" src="Imagen2.jpeg" alt="Imagen 3">
+            <img class="image" src="Imagen3.jpeg" alt="Imagen 2">
+            <img class="image" src="Imagen4.jpeg" alt="Imagen 4">
+        </div>
+    </div>
 
-        function closeModal() {
-            var modal = document.getElementById("modal");
-            modal.style.display = "none";
-        }
-    </script>
+    
 </body>
+
+<script>
+    function abrir() {
+        document.getElementById("win").style.display = "block"
+    }
+    function cerrar() {
+        document.getElementById("win").style.display = "none"
+    }
+
+</script>
+<br>
+<footer>
+   <div>
+        <a href="Galeria1.html" type="button" class="color-button-next"> Galeria</a>
+    </div>
+</footer>
+<br>
 
 </html>
